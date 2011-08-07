@@ -17,6 +17,8 @@ GET     /jquery/                                staticDir:public/jquery
 GET     /javascripts/                           staticDir:public/javascripts
 GET     /stylesheets/                           staticDir:public/stylesheets
 GET     /fullcalendar/                          staticDir:public/fullcalendar
+GET     /css/                                   staticDir:public/css
+GET     /images/                                staticDir:public/images
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

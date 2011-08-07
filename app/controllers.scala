@@ -22,7 +22,5 @@ object Events extends Controller {
     val jmap:java.util.Map[String,String] = map
     Json(gson.toJson(Array(jmap)))
 //    Json("""[{"title":"event1","start":"2011-08-10"}]""")
-  }
-
-  
+  }  
 }
