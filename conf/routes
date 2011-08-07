@@ -4,12 +4,19 @@
 
 # Home page
 GET     /                                       Application.index
+GET     /data                                   Events.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
+
+GET     /default.html                           staticFile:public/default.html
+GET     /jquery/                                staticDir:public/jquery
+GET     /javascripts/                           staticDir:public/javascripts
+GET     /stylesheets/                           staticDir:public/stylesheets
+GET     /fullcalendar/                          staticDir:public/fullcalendar
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
