@@ -18,7 +18,7 @@ object Events extends Controller {
 
   def index = {
     val gson = new Gson
-    val map = Map("title"->"event1", "start"->"2011-08-10")
+    val map = Map("title"->"event1", "start"->"2011-08-10", "end"->"2011-08-10")
     val jmap:java.util.Map[String,String] = map
     Json(gson.toJson(Array(jmap)))
 //    Json("""[{"title":"event1","start":"2011-08-10"}]""")
