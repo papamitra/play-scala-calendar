@@ -3,14 +3,19 @@ $(document).ready(function() {
 	editable: true,
 	events: "/data",
 	dayClick: function(date, allDay, jsEvent, view) {
+	    $('#dialog ul').empty();
 	    $.each($('#calendar').fullCalendar('clientEvents', function(event) {
-		if(event.start <= date && (event.end == null || event.end >= date)) {
+		if((event.start.valueOf() == date.valueOf()) ||
+		   (event.start <= date && event.end >= date)) {
 		    return true;
 		}
 		return false;
 	    }),function (){
-		alert(this.title);
+		$('#dialog ul').append(
+		    $('<li></li>').text(this.title)
+		);
 	    });
+	    $('#dialog').dialog('open');
 	},
 	eventClick: function(event){
 	    alert(event.title);
